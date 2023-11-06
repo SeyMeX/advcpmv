@@ -12,7 +12,7 @@ rm coreutils-$CORE_UTILS_VERSION.tar.xz
     cd coreutils-$CORE_UTILS_VERSION/
     curl -LO https://raw.githubusercontent.com/jarun/advcpmv/master/advcpmv-$ADVCPMV_VERSION-$CORE_UTILS_VERSION.patch
     patch -p1 -i advcpmv-$ADVCPMV_VERSION-$CORE_UTILS_VERSION.patch
-    ./configure
+    ./configure FORCE_UNSAFE_CONFIGURE=1
     make
     cp ./src/cp ../advcp
     cp ./src/mv ../advmv
