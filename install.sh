@@ -10,8 +10,8 @@ tar xvJf coreutils-$CORE_UTILS_VERSION.tar.xz
 rm coreutils-$CORE_UTILS_VERSION.tar.xz
 (
     cd coreutils-$CORE_UTILS_VERSION/
-    curl -LO https://raw.githubusercontent.com/jarun/advcpmv/master/advcpmv-0.9-9.4.patch
-    patch -p1 -i advcpmv-0.9-9.4.patch
+    curl -LO https://raw.githubusercontent.com/jarun/advcpmv/master/advcpmv-$ADVCPMV_VERSION-$CORE_UTILS_VERSION.patch
+    patch -p1 -i advcpmv-$ADVCPMV_VERSION-$CORE_UTILS_VERSION.patch
     ./configure FORCE_UNSAFE_CONFIGURE=1
     make
     cp ./src/cp ../advcp
